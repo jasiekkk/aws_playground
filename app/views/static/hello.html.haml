@@ -3,6 +3,8 @@
 - AwsUser.all.each do |aws_user|
   =image_tag aws_user.avatar
   %h2= aws_user.email
+
+  =link_to 'Delete user', aws_user_registration_path(aws_user), method: :delete
   %hr
 
 =link_to 'Create AWS User', new_aws_user_registration_path
