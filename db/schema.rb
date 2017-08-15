@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170815121711) do
+ActiveRecord::Schema.define(version: 20170815131329) do
 
   create_table "aws_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -26,6 +26,11 @@ ActiveRecord::Schema.define(version: 20170815121711) do
     t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
+    t.string   "avatar",                 limit: 255
+    t.string   "avatar_file_name",       limit: 255
+    t.string   "avatar_content_type",    limit: 255
+    t.integer  "avatar_file_size",       limit: 4
+    t.datetime "avatar_updated_at"
   end
 
   add_index "aws_users", ["email"], name: "index_aws_users_on_email", unique: true, using: :btree
