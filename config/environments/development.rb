@@ -1,4 +1,16 @@
 Rails.application.configure do
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :url => ':s3_domain_url',
+    :path => "/:class/:attachment/:id_partition/:style/:filename",
+    :s3_credentials => {
+      :bucket => ENV['S3_BUCKET'],
+      :access_key_id => ENV['AWS_ID'],
+      :secret_access_key => ENV['AWS_KEY']
+    }
+  }
+    # url: ':s3_alias_url',
+    # s3_host_alias: ENV['S3_HOST_ALIAS'],
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on

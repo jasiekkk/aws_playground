@@ -1,7 +1,7 @@
 %h1 AWS App Users:
 %hr
 - AwsUser.all.each do |aws_user|
-  =image_tag aws_user.avatar
+  =image_tag aws_user.avatar.url(:medium)
   %h2= aws_user.email
 
   =link_to 'Delete user', aws_user_registration_path(aws_user), method: :delete

@@ -9,6 +9,8 @@ gem 'haml'
 gem 'paperclip'
 
 gem 'puma'
+
+gem 'aws-sdk', '< 2.0' # there is some fuckup in next versions
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7'
 # Use SCSS for stylesheets
