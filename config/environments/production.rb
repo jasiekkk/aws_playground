@@ -2,12 +2,12 @@ Rails.application.configure do
   config.paperclip_defaults = {
     storage: :s3,
     url: ':s3_alias_url',
-    s3_host_alias: ENV['S3_HOST_ALIAS'],
+    s3_host_alias: ENV['AWS_S3_HOST_ALIAS'],
     path: '/:class/:attachment/:id_partition/:style/:filename',
-    bucket: ENV['S3_BUCKET'],
+    bucket: ENV['AWS_S3_BUCKET'],
     s3_credentials: {
-      access_key_id: ENV['AWS_ID'],
-      secret_access_key: ENV['AWS_KEY']
+      access_key_id: ENV['AWS_ACCESS_ID'],
+      secret_access_key: ENV['AWS_ACCESS_KEY']
     }
   }
   config.cache_classes = true
